@@ -12,7 +12,7 @@ const arrayEl = ingredients.map(ingredient => {
   elLi.classList.add('item');
   return elLi;
 });
-// arrayEL.append(elLi);
+
 console.log(arrayEl);
 
 
