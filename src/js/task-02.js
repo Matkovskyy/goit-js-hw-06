@@ -6,6 +6,7 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const ingredientsEls = document.querySelector('#ingredients');
 const arrayEl = ingredients.map(ingredient => {
   const elLi = document.createElement('li');
   elLi.textContent = ingredient;
@@ -13,7 +14,7 @@ const arrayEl = ingredients.map(ingredient => {
   return elLi;
 });
 
-console.log(arrayEl);
+ingredientsEls.append(...arrayEl);
 
 
 
