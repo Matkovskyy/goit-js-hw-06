@@ -1,12 +1,24 @@
-let counterValue = document.querySelector('#value');
-let valueEl = Number(document.querySelector('#value').textContent);
-const decrementBtn = document.querySelector('#counter').firstElementChild;
-const incrementBtn = document.querySelector('#counter').lastElementChild;
-decrementBtn.addEventListener('click', event => {
-    valueEl -= 1;
-    console.log(valueEl);
+
+const decrementBtn = document.querySelector('button[data-action="decrement"]');
+const incrementBtn = document.querySelector('button[data-action="increment"]');
+const valueRef = document.querySelector('#value')
+let countValue = 0;
+
+const updateValue = () => {
+    valueRef.textContent = countValue
+};
+const increment = () => {
+    countValue += 1
+};
+const decrement = () => {
+    countValue -= 1
+}
+incrementBtn.addEventListener('click', () => {
+    increment();
+    updateValue()
+
 });
-incrementBtn.addEventListener('click', event => {
-    valueEl += 1;
-    console.log(valueEl);
-});
+decrementBtn.addEventListener('click', () => {
+    decrement();
+    updateValue()
+})
